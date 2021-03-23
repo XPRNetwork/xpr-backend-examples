@@ -1,0 +1,25 @@
+{
+  "name": "proton-examples",
+  "version": "1.0.0",
+  "description": "Modify .env with your private key and constants.js with your account name, etc",
+  "main": "index.js",
+  "dependencies": {
+    "@proton/js": "^22.0.45",
+    "dotenv": "^8.2.0",
+    "node-fetch": "^2.6.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ProtonProtocol/proton-examples.git"
+  },
+  "author": "Syed Jafri",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ProtonProtocol/proton-examples/issues"
+  },
+  "homepage": "https://github.com/ProtonProtocol/proton-examples#readme"
+}
