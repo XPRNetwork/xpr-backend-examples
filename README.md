@@ -18,7 +18,7 @@ Shows the following:
 15. Transfer NFT
 
 # Installation
-1. Rename .env.example to .env
+1. Rename .env.example to .env and set your private key
 2. Run `npm i `
 3. Modify index.js at root to run the functions you want
 4. `node index.js`
@@ -30,9 +30,9 @@ const { buyStorage } = require('./chain/buy-storage')
 
 const main = async () => {
     // Buy Blockchain Storage
-    // Costs 20 XPR / KB + 10% fee (~6,600 XPR for 300KB)
+    // Costs 22 XPR / KB (~6,600 XPR for 300KB)
     await buyStorage({
-        bytes: 300000 // 300 KB
+        bytes: 300000
     })
 }
 

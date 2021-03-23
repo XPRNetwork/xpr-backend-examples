@@ -21,9 +21,9 @@ const main = async () => {
      * CHAIN
      */
     // Buy Blockchain Storage
-    // Costs 20 XPR / KB + 10% fee (~6,600 XPR for 300KB)
+    // Costs 22 XPR / KB (~6,600 XPR for 300KB)
     await buyStorage({
-        bytes: 300000 // 300 KB
+        bytes: 300000
     })
 
     /**
