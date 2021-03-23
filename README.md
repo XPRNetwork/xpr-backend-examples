@@ -17,3 +17,25 @@ Main function shows the following:
 12. Get NFT listings
 13. Buy NFT with XPR
 14. Cancel NFT sale
+
+# Installation
+
+```
+npm i
+```
+
+# Example run
+
+```js
+const { buyStorage } = require('./chain/buy-storage')
+
+const main = async () => {
+    // Buy Blockchain Storage
+    // Costs 20 XPR / KB + 10% fee (~6,600 XPR for 300KB)
+    await buyStorage({
+        bytes: 300000 // 300 KB
+    })
+}
+
+main()
+```

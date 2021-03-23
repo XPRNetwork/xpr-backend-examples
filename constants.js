@@ -1,6 +1,6 @@
 const ACCOUNT = 'testdeploy'
 const ACCOUNT_PERMISSION = 'active'
-const SYSTEM_ACCOUNT = 'eosio' // don't change
+const SYSTEM = 'eosio' // don't change
 const XPR_TOKEN_CONTRACT = 'eosio.token' // don't change
 
 const CHAIN = 'proton-test' // change to 'proton' for mainnet
@@ -15,7 +15,7 @@ const NFT_API = CHAIN === 'proton'
 module.exports = {
     ACCOUNT,
     ACCOUNT_PERMISSION,
-    SYSTEM_ACCOUNT,
+    SYSTEM,
     XPR_TOKEN_CONTRACT,
     CHAIN,
     ENDPOINT,

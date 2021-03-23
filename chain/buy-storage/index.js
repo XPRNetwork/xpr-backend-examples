@@ -1,9 +1,9 @@
 const { transact } = require('../../api')
-const { SYSTEM_ACCOUNT, ACCOUNT, ACCOUNT_PERMISSION } = require('../../constants')
+const { SYSTEM, ACCOUNT, ACCOUNT_PERMISSION } = require('../../constants')
 
 const buyStorage = async ({ bytes }) => {
     await transact([{
-        account: SYSTEM_ACCOUNT,
+        account: SYSTEM,
         name: 'buyrambytes',
         data: {
             payer: ACCOUNT,
