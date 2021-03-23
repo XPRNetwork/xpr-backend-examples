@@ -13,6 +13,7 @@ const { createNft } = require('./nft/create-nft')
 const { sellNft } = require('./nft/marketplace-sell')
 const { buyNft } = require('./nft/marketplace-buy')
 const { cancelNftSale } = require('./nft/marketplace-unlist')
+const { transferNft } = require('./nft/transfer-nft')
 const { ACCOUNT } = require('./constants')
 
 const main = async () => {
@@ -119,8 +120,9 @@ const main = async () => {
     const nfts = await getNfts({
         owner: ACCOUNT
     })
+    const nft = nfts[0]
     await sellNft({
-        asset_ids: [nfts[0].asset_id],
+        asset_ids: [nft.asset_id],
         listing_price: '1.0000 XPR',
         settlement_symbol: '4,XPR' // 4 is the precision of XPR
     })
@@ -141,7 +143,14 @@ const main = async () => {
 
     // Unlist NFT
     await cancelNftSale({
-        sale_id: listings[0].sale_id
+        sale_id: listing.sale_id
+    })
+
+    // Transfer NFT
+    await transferNft({
+        to: 'syed',
+        asset_ids: [nft.asset_id],
+        memo: ''
     })
 }
 
