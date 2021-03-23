@@ -1,8 +1,6 @@
 # Proton Examples
 
-Modify .env with your private key and constants.js with your account name, etc
-
-Main function shows the following:
+Shows the following:
 1. Purchase blockchain storage
 2. Deploying token contract like RANDOM
 3. Create RANDOM
@@ -17,16 +15,15 @@ Main function shows the following:
 12. Get NFT listings
 13. Buy NFT with XPR
 14. Cancel NFT sale
+15. Transfer NFT
 
 # Installation
+1. Rename .env.example to .env
+2. Run `npm i `
+3. Modify index.js at root to run the functions you want
+4. `node index.js`
 
-```
-npm i
-```
-
-# Example run
-
-Modify index.js at root and run `node index.js`
+# Example index.js
 
 ```js
 const { buyStorage } = require('./chain/buy-storage')
@@ -45,5 +42,5 @@ main()
 # Setup testnet
 1. Go to https://monitor.testnet.protonchain.com/
 2. Create key pair (save this securely)
-3. Create account 
+3. Create account with key pair
 4. Faucet for some free testnet XPR!
