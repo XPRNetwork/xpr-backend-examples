@@ -12,5 +12,6 @@ module.exports = {
     transact: (actions) => api.transact({actions}, {
         useLastIrreversible: true,
         expireSeconds: 3000,
-    })
+    }),
+    fetch
 }

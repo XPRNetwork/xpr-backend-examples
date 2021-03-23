@@ -1,5 +1,5 @@
-const { transact } = require('../api')
-const { ACCOUNT, ACCOUNT_PERMISSION } = require('../constants')
+const { transact } = require('../../api')
+const { ACCOUNT, ACCOUNT_PERMISSION } = require('../../constants')
 
 const issueToken = async ({ quantity }) => {
     await transact([{

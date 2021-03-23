@@ -1,7 +1,7 @@
 const { readdirSync } = require('fs')
 const { join } = require('path')
 
-function getDeployableFilesFromDir(dir) {
+const getDeployableFilesFromDir = (dir) => {
     const dirCont = readdirSync(dir)
     const wasmFileName = dirCont.find(filePath => filePath.match(/.*\.(wasm)$/gi))
     const abiFileName = dirCont.find(filePath => filePath.match(/.*\.(abi)$/gi))
@@ -13,6 +13,13 @@ function getDeployableFilesFromDir(dir) {
     }
 }
 
+const wait = async (ms) => {
+  return new Promise(resolve => {
+    setTimeout(resolve, ms);
+  });
+}
+
 module.exports = {
-    getDeployableFilesFromDir
+  wait,
+  getDeployableFilesFromDir
 }

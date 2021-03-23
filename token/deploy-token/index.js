@@ -1,8 +1,8 @@
-const { api, transact } = require('../api')
-const { getDeployableFilesFromDir } = require('../utils')
 const { readFileSync } = require('fs')
 const { Serialize } = require('@proton/js')
-const { ACCOUNT, ACCOUNT_PERMISSION } = require('../constants')
+const { api, transact } = require('../../api')
+const { getDeployableFilesFromDir } = require('../../utils')
+const { ACCOUNT, ACCOUNT_PERMISSION } = require('../../constants')
 
 const deployToken = async () => {
     const {wasmPath, abiPath} = getDeployableFilesFromDir(__dirname)

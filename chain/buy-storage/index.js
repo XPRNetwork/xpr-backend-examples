@@ -1,5 +1,5 @@
-const { transact } = require('../api')
-const { SYSTEM_ACCOUNT, ACCOUNT, ACCOUNT_PERMISSION } = require('../constants')
+const { transact } = require('../../api')
+const { SYSTEM_ACCOUNT, ACCOUNT, ACCOUNT_PERMISSION } = require('../../constants')
 
 const buyStorage = async ({ bytes }) => {
     await transact([{
