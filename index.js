@@ -5,7 +5,7 @@ const { issueToken } = require('./issue-token')
 const { transferToken } = require('./transfer-token')
 
 const main = async () => {
-    // 300 KB, costs 200 XPR / KB + 10% fee (~66,000 XPR for 300KB)
+    // 300 KB, costs 20 XPR / KB + 10% fee (~6,600 XPR for 300KB)
     await buyRam({ bytes: 300000 })
     await deployToken()
 
