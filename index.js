@@ -1,4 +1,4 @@
-const { buyRam } = require('./buyram')
+const { buyStorage } = require('./buy-storage')
 const { deployToken } = require('./deploy-token')
 const { createToken } = require('./create-token')
 const { issueToken } = require('./issue-token')
@@ -6,7 +6,7 @@ const { transferToken } = require('./transfer-token')
 
 const main = async () => {
     // 300 KB, costs 20 XPR / KB + 10% fee (~6,600 XPR for 300KB)
-    await buyRam({ bytes: 300000 })
+    await buyStorage({ bytes: 300000 })
     await deployToken()
 
     // Note that the .0000 means precision is 4 for this token
