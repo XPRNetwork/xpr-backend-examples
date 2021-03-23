@@ -1,5 +1,4 @@
 const { buyRam } = require('./buyram')
-const { ACCOUNT } = require('./constants')
 const { deployToken } = require('./deploy-token')
 const { createToken } = require('./create-token')
 const { issueToken } = require('./issue-token')
