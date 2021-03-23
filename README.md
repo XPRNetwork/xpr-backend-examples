@@ -26,6 +26,8 @@ npm i
 
 # Example run
 
+Modify index.js at root and run `node index.js`
+
 ```js
 const { buyStorage } = require('./chain/buy-storage')
 
@@ -39,3 +41,9 @@ const main = async () => {
 
 main()
 ```
+
+# Setup testnet
+1. Go to https://monitor.testnet.protonchain.com/
+2. Create key pair (save this securely)
+3. Create account 
+4. Faucet for some free testnet XPR!
