@@ -19,6 +19,7 @@ const createCollection = async ({
         },
         authorization: [{ actor: ACCOUNT, permission: ACCOUNT_PERMISSION }],
     }])
+    console.log(`Collection ${collection_name} created!`)
 }
 
 module.exports = {

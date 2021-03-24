@@ -21,6 +21,7 @@ const createTemplate = async ({
         },
         authorization: [{ actor: ACCOUNT, permission: ACCOUNT_PERMISSION }],
     }])
+    console.log(`Template created!`)
 }
 
 module.exports = {

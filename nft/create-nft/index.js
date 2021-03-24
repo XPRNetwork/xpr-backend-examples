@@ -23,6 +23,7 @@ const createNft = async ({
         },
         authorization: [{ actor: ACCOUNT, permission: ACCOUNT_PERMISSION }],
     }])
+    console.log(`NFT created!`)
 }
 
 module.exports = {

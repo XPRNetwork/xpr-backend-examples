@@ -13,6 +13,7 @@ const transferToken = async ({ to, quantity, memo }) => {
         },
         authorization: [{ actor: ACCOUNT, permission: ACCOUNT_PERMISSION }]
     }])
+    console.log(`${quantity} successfully transferred from ${ACCOUNT} to ${to}`)
 }
 
 module.exports = {

@@ -41,6 +41,7 @@ const deployToken = async () => {
                 permission: ACCOUNT_PERMISSION,
             }],
         }])
+        console.log(`WASM successfully deployed!`)
     } catch (error) {
         console.log('Set WASM failed', error)
     }
@@ -59,6 +60,7 @@ const deployToken = async () => {
                 permission: ACCOUNT_PERMISSION,
             }],
         }])
+        console.log(`ABI successfully deployed!`)
     } catch (error) {
         console.log('Set abi failed', error)
     }

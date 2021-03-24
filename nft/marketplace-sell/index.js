@@ -32,6 +32,7 @@ const sellNft = async ({
             authorization: [{ actor: ACCOUNT, permission: ACCOUNT_PERMISSION }],
         }
     ])
+    console.log(`NFT successfully listed for ${listing_price}!`)
 }
 
 module.exports = {

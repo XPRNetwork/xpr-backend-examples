@@ -19,6 +19,7 @@ const transferNft = async ({
             authorization: [{ actor: ACCOUNT, permission: ACCOUNT_PERMISSION }],
         }
     ])
+    console.log(`NFT successfully transfered to ${to}!`)
 }
 
 module.exports = {

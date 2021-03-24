@@ -30,6 +30,7 @@ const buyNft = async ({
             authorization: [{ actor: ACCOUNT, permission: ACCOUNT_PERMISSION }],
         }
     ])
+    console.log(`NFT successfully bought for ${quantity}!`)
 }
 
 module.exports = {

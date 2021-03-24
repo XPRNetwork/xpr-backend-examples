@@ -12,6 +12,7 @@ const buyStorage = async ({ bytes }) => {
         },
         authorization: [{ actor: ACCOUNT, permission: ACCOUNT_PERMISSION }]
     }])
+    console.log(`${bytes} bytes of Blockchain Storage successfully purchased!`)
 }
 
 module.exports = {

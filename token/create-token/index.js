@@ -11,6 +11,7 @@ const createToken = async ({ maximumSupply }) => {
         },
         authorization: [{ actor: ACCOUNT, permission: ACCOUNT_PERMISSION }]
     }])
+    console.log(`Token successfully created with max supply ${maximumSupply}!`)
 }
 
 module.exports = {

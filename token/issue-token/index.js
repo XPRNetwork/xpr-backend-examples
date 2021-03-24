@@ -12,6 +12,8 @@ const issueToken = async ({ quantity }) => {
         },
         authorization: [{ actor: ACCOUNT, permission: ACCOUNT_PERMISSION }]
     }])
+
+    console.log(`${quantity} successfully issued to ${ACCOUNT}`)
 }
 
 module.exports = {

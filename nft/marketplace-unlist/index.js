@@ -14,6 +14,7 @@ const cancelNftSale = async ({
             authorization: [{ actor: ACCOUNT, permission: ACCOUNT_PERMISSION }],
         }
     ])
+    console.log(`NFT successfully unlisted!`)
 }
 
 module.exports = {

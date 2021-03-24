@@ -20,6 +20,7 @@ const createSchema = async ({
         },
         authorization: [{ actor: ACCOUNT, permission: ACCOUNT_PERMISSION }],
     }])
+    console.log(`Schema created!`)
 }
 
 module.exports = {
