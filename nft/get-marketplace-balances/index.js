@@ -5,11 +5,18 @@ const getMarketplaceBalances = async ({
 }) => {
     const { rows } = await rpc.get_table_rows({
         code: 'atomicmarket',
-        scope: collection_creator,
+        scope: 'atomicmarket',
         table: 'balances',
-        limit: -1
+        lower_bound: collection_creator,
+        upper_bound: collection_creator,
+        limit: 1
     })
-    return rows
+
+    if (rows && rows.length) {
+        return rows[0].quantities
+    } else {
+        return []
+    }
 }
 
 module.exports = {
