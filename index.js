@@ -17,6 +17,8 @@ const { sellNft } = require('./nft/marketplace-sell')
 const { buyNft } = require('./nft/marketplace-buy')
 const { cancelNftSale } = require('./nft/marketplace-unlist')
 const { transferNft } = require('./nft/transfer-nft')
+const { getMarketplaceBalances } = require('./nft/get-marketplace-balances')
+const { withdrawCreatorBalance } = require('./nft/withdraw-creator-balance')
 const { ACCOUNT } = require('./constants')
 
 const main = async () => {
@@ -162,6 +164,17 @@ const main = async () => {
         to: 'syed',
         asset_ids: [nft.asset_id],
         memo: ''
+    })
+
+    // Balance of creator fees (kept in contract until withdrawn)
+    const creatorBalances = await getMarketplaceBalances({
+        collection_creator: ACCOUNT
+    })
+
+    // Withdraw creator fees
+    await withdrawCreatorBalance({
+        collection_creator: ACCOUNT,
+        token_to_withdraw: '0.0001 XPR'
     })
 }
 

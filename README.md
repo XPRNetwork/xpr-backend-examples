@@ -17,6 +17,8 @@ Shows the following:
 14. Buy NFT with XPR
 15. Cancel NFT sale
 16. Transfer NFT
+17. Get Creator fee balances
+18. Withdraw creator fees
 
 # Installation
 1. Rename .env.example to .env and set your private key
