@@ -132,7 +132,7 @@ const main = async () => {
     const nft = nfts[0]
     await sellNft({
         asset_ids: [nft.asset_id],
-        listing_price: '1.0000 XPR',
+        listing_price: 1,
         settlement_symbol: '4,XPR' // 4 is the precision of XPR
     })
 

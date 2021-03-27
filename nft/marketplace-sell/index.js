@@ -6,6 +6,8 @@ const sellNft = async ({
     listing_price,
     settlement_symbol
 }) => {
+    const [precision, symbol] = settlement_symbol.split(',')
+
     await transact([
         {
             account: "atomicmarket",
@@ -13,7 +15,7 @@ const sellNft = async ({
             data: {
                 seller: ACCOUNT,
                 asset_ids: asset_ids,
-                listing_price: listing_price,
+                listing_price: `${listing_price.toFixed(precision)} ${symbol}`,
                 settlement_symbol: settlement_symbol,
                 maker_marketplace: 'fees.market' 
             },
@@ -32,7 +34,7 @@ const sellNft = async ({
             authorization: [{ actor: ACCOUNT, permission: ACCOUNT_PERMISSION }],
         }
     ])
-    console.log(`NFT successfully listed for ${listing_price}!`)
+    console.log(`NFT successfully listed for ${listing_price} ${symbol}!`)
 }
 
 module.exports = {
