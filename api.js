@@ -10,7 +10,7 @@ module.exports = {
     rpc,
     api,
     transact: (actions) => api.transact({actions}, {
-        useLastIrreversible: true,
+        blocksBehind: 300,
         expireSeconds: 3000,
     }),
     fetch
