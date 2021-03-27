@@ -45,6 +45,7 @@ const main = async () => {
 
     // Transfer token
     await transferToken({
+        tokenContract: ACCOUNT, // Replace with eosio.token for XPR, xtokens for FOOBAR, etc
         to: 'syed',
         quantity: '1.0000 RANDOM',
         memo: ''
