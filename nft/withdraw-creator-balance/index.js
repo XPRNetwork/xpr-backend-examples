@@ -15,7 +15,7 @@ const withdrawCreatorBalance = async ({
             authorization: [{ actor: collection_creator, permission: 'active' }],
         }
     ])
-    console.log(`Successfully withdraw creator balance to creator (${collection_creator}) account!`)
+    console.log(`Successfully withdrew ${token_to_withdraw} to creator (${collection_creator}) account!`)
 }
 
 module.exports = {
