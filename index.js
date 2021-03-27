@@ -3,6 +3,7 @@ const { deployToken } = require('./token/deploy-token')
 const { createToken } = require('./token/create-token')
 const { issueToken } = require('./token/issue-token')
 const { transferToken } = require('./token/transfer-token')
+const { getBalance } = require('./token/get-balance')
 const { createCollection } = require('./nft/create-collection')
 const { createSchema } = require('./nft/create-schema')
 const { createTemplate } = require('./nft/create-template')
@@ -49,6 +50,13 @@ const main = async () => {
         to: 'syed',
         quantity: '1.0000 RANDOM',
         memo: ''
+    })
+
+    // Get balance
+    const balance = await getBalance({
+        account: 'syed',
+        tokenContract: ACCOUNT,
+        tokenSymbol: 'RANDOM'
     })
 
     /**
