@@ -1,3 +1,5 @@
+require('dotenv').config()
+
 const { buyStorage } = require('./chain/buy-storage')
 const { deployToken } = require('./token/deploy-token')
 const { createToken } = require('./token/create-token')

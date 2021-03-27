@@ -1,4 +1,3 @@
-require('dotenv').config()
 const {JsonRpc, Api, JsSignatureProvider} = require('@proton/js')
 const {ENDPOINT} = require('./constants')
 const fetch = require('node-fetch')
