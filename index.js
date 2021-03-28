@@ -97,7 +97,13 @@ const main = async () => {
     // Create collection
     await createCollection({
         collection_name: COLLECTION_NAME,
-        creator_fee: CREATOR_FEE
+        creator_fee: CREATOR_FEE,
+        data: [
+            {"key": "name", "value": ["string", "Proton Monsters"]},
+            {"key": "img", "value": ["ipfs", "QmejwojCLwjbNxqVNwBhyvKj5jUM4kGsm4tGM2U8CbniXy"]},
+            {"key": "description", "value": ["string", "Monsters on Proton!"]},
+            {"key": "url", "value": ["string", "https://nft.protonchain.com"]},
+        ]
     })
 
     // Create schema
