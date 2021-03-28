@@ -12,6 +12,7 @@ const { createTemplate } = require('./nft/create-template')
 const { getTemplates } = require('./nft/get-templates')
 const { getNfts } = require('./nft/get-nfts')
 const { getListings } = require('./nft/get-listings')
+const { setNftMutableData } = require('./nft/change-mutable-data')
 const { createNft } = require('./nft/create-nft')
 const { sellNft } = require('./nft/marketplace-sell')
 const { buyNft } = require('./nft/marketplace-buy')
@@ -126,13 +127,24 @@ const main = async () => {
         mutable_data: NFT_MUTABLE_DATA
     })
 
+    // Get NFTs
+    const nfts = await getNfts({
+        owner: ACCOUNT
+    })
+
+    // Change mutable property
+    await setNftMutableData({
+        asset_owner: ACCOUNT,
+        asset_id: nfts[0].asset_id,
+        new_mutable_data: [
+            { key: 'health', value: ['uint16', 2] }
+        ]
+    })
+
     /**
      * NFT Marketplace
      */
     // Sell NFT
-    const nfts = await getNfts({
-        owner: ACCOUNT
-    })
     const nft = nfts[0]
     await sellNft({
         asset_ids: [nft.asset_id],
