@@ -7,6 +7,7 @@ const { issueToken } = require('./token/issue-token')
 const { transferToken } = require('./token/transfer-token')
 const { getBalance } = require('./token/get-balance')
 const { createCollection } = require('./nft/create-collection')
+const { setCollectionData } = require('./nft/set-collection-data')
 const { createSchema } = require('./nft/create-schema')
 const { createTemplate } = require('./nft/create-template')
 const { getTemplates } = require('./nft/get-templates')
@@ -98,6 +99,17 @@ const main = async () => {
     await createCollection({
         collection_name: COLLECTION_NAME,
         creator_fee: CREATOR_FEE,
+        data: [
+            {"key": "name", "value": ["string", "Proton Monsters"]},
+            {"key": "img", "value": ["ipfs", "QmejwojCLwjbNxqVNwBhyvKj5jUM4kGsm4tGM2U8CbniXy"]},
+            {"key": "description", "value": ["string", ""]},
+            {"key": "url", "value": ["string", "https://nft.protonchain.com"]},
+        ]
+    })
+
+    // Change col data
+    await setCollectionData({
+        collection_name: COLLECTION_NAME,
         data: [
             {"key": "name", "value": ["string", "Proton Monsters"]},
             {"key": "img", "value": ["ipfs", "QmejwojCLwjbNxqVNwBhyvKj5jUM4kGsm4tGM2U8CbniXy"]},
