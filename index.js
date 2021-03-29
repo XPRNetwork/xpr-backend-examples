@@ -10,6 +10,7 @@ const { createCollection } = require('./nft/create-collection')
 const { setCollectionData } = require('./nft/set-collection-data')
 const { createSchema } = require('./nft/create-schema')
 const { createTemplate } = require('./nft/create-template')
+const { burnNft } = require('./nft/burn-nft')
 const { getTemplates } = require('./nft/get-templates')
 const { getNfts } = require('./nft/get-nfts')
 const { getListings } = require('./nft/get-listings')
@@ -157,6 +158,11 @@ const main = async () => {
         new_mutable_data: [
             { key: 'health', value: ['uint16', 2] }
         ]
+    })
+
+    // Burn NFT
+    await burnNft({
+        asset_id: nfts[0].asset_id,
     })
 
     /**
