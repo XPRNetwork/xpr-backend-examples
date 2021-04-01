@@ -155,8 +155,8 @@ const main = async () => {
     const nftsAdvanced = await getNftsAdvanced({
         owner: ACCOUNT,
         collection_name: COLLECTION_NAME,
-        page = 1,
-        limit = 100
+        page: 1,
+        limit: 100
     })
 
     // Change mutable property
