@@ -4,7 +4,8 @@ const { ACCOUNT, ACCOUNT_PERMISSION } = require('../../constants')
 const sellNft = async ({
     asset_ids,
     listing_price,
-    settlement_symbol
+    settlement_symbol,
+    maker_marketplace
 }) => {
     const [precision, symbol] = settlement_symbol.split(',')
 
@@ -17,7 +18,7 @@ const sellNft = async ({
                 asset_ids: asset_ids,
                 listing_price: `${listing_price.toFixed(precision)} ${symbol}`,
                 settlement_symbol: settlement_symbol,
-                maker_marketplace: 'fees.market' 
+                maker_marketplace: maker_marketplace
             },
             authorization: [{ actor: ACCOUNT, permission: ACCOUNT_PERMISSION }],
         },

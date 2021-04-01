@@ -18,6 +18,7 @@ const { setNftMutableData } = require('./nft/change-mutable-data')
 const { createNft } = require('./nft/create-nft')
 const { sellNft } = require('./nft/marketplace-sell')
 const { buyNft } = require('./nft/marketplace-buy')
+const { registerMarketplace } = require('./nft/register-marketplace')
 const { cancelNftSale } = require('./nft/marketplace-unlist')
 const { transferNft } = require('./nft/transfer-nft')
 const { getMarketplaceBalances } = require('./nft/get-marketplace-balances')
@@ -168,12 +169,18 @@ const main = async () => {
     /**
      * NFT Marketplace
      */
+    // Register marketplace (ONLY IF YOU ARE CREATING YOUR OWN MARKETPLACE WEBSITE)
+    await registerMarketplace({
+        marketplace_name: ACCOUNT
+    })
+
     // Sell NFT
     const nft = nfts[0]
     await sellNft({
         asset_ids: [nft.asset_id],
         listing_price: 1,
-        settlement_symbol: '4,XPR' // 4 is the precision of XPR
+        settlement_symbol: '4,XPR', // 4 is the precision of XPR
+        maker_marketplace: 'fees.market' // Only replace with your account if you have registered a marketplace
     })
 
     // Get Listings
@@ -187,7 +194,8 @@ const main = async () => {
     await buyNft({
         token_contract: listing.price.token_contract,
         quantity: `${(+listing.price.amount).toFixed(listing.price.token_precision)} ${listing.price.token_symbol}`,
-        sale_id: listing.sale_id
+        sale_id: listing.sale_id,
+        taker_marketplace: 'fees.market' // Only replace with your account if you have registered a marketplace
     })
 
     // Unlist NFT

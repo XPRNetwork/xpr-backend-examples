@@ -4,7 +4,8 @@ const { ACCOUNT, ACCOUNT_PERMISSION } = require('../../constants')
 const buyNft = async ({
     token_contract,
     quantity,
-    sale_id
+    sale_id,
+    taker_marketplace
 }) => {
     await transact([
         {
@@ -25,7 +26,7 @@ const buyNft = async ({
                 buyer: ACCOUNT,
                 sale_id: sale_id,
                 intended_delphi_median: 0,
-                taker_marketplace: 'fees.market'
+                taker_marketplace: taker_marketplace
             },
             authorization: [{ actor: ACCOUNT, permission: ACCOUNT_PERMISSION }],
         }
