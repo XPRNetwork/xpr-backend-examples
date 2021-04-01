@@ -13,6 +13,7 @@ const { createTemplate } = require('./nft/create-template')
 const { burnNft } = require('./nft/burn-nft')
 const { getTemplates } = require('./nft/get-templates')
 const { getNfts } = require('./nft/get-nfts')
+const { getNftsAdvanced } = require('./nft/get-nfts-advanced')
 const { getListings } = require('./nft/get-listings')
 const { setNftMutableData } = require('./nft/change-mutable-data')
 const { createNft } = require('./nft/create-nft')
@@ -150,6 +151,12 @@ const main = async () => {
     // Get NFTs
     const nfts = await getNfts({
         owner: ACCOUNT
+    })
+    const nftsAdvanced = await getNftsAdvanced({
+        owner: ACCOUNT,
+        collection_name: COLLECTION_NAME,
+        page = 1,
+        limit = 100
     })
 
     // Change mutable property
